@@ -1,0 +1,412 @@
+:root {
+  --black-color: #2D2D2D;
+  --dark-color: #757575;
+  --grey-color: #ACACAC;
+  --bright-color: #EDEDED;
+  --primary-color: #5200FF;
+  --secondary-color: #00FF57;
+  --primary-light-color: #E6DAFF;
+  --secondary-light-color: #DCFFE8;
+
+  --font-global: 'Roboto', 'Oxygen',
+  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  sans-serif;
+}
+
+/* SPECIAL REMOVAL STUFF*/
+input:focus { 
+  outline: none !important;
+  border-color: inherit;
+}
+textarea:focus { 
+  outline: none !important;
+  border-color: inherit;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+body {
+  overflow-x: hidden;
+  margin: 2rem;
+  font-family: 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  color: var(--black-color);
+  background-color: white;
+  /*min-height: 100vh;*/
+}
+
+main {
+  width: 100%;
+  height: auto;
+}
+
+h1 {
+  color: var(--primary-color);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+/* HOME PAGE LAYOUT */
+#home_title {
+
+}
+#home_buttons_wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+/* NEW EMPLOYEE PAGE LAYOUT */
+#newEmployee {
+  /* display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  width: 100%; */
+}
+
+/* HEADER LAYOUT */
+#header_title {
+  margin-bottom: 0;
+}
+#header_subtitle {
+  font-style: italic;
+  margin-top: 0;
+  color: var(--dark-color)
+  ;
+}
+
+/* TABLE */
+td {
+  padding: .5rem 1rem;
+}
+table {
+  border: 1px solid #17252A;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+table, th {
+  border: 1px solid #17252A;
+}
+thead {
+  background-color: #DEF2F1;
+}
+
+/* GLOBAL FORM LAYOUT */
+#formEmployee {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: auto;
+  padding: 2rem;
+  /* border: 1px solid rgb(117, 117, 117); */
+  border-radius: .5rem;
+  background-color: white;
+  box-shadow: 1px 10px 25px rgba(0,0,0,.2);
+}
+.rowWrapper {
+  display: flex;
+  flex-direction: row;
+}
+.inputWrapper, .selectWrapper {
+  display: flex;
+  flex-direction: column;
+  /* gap: .5rem; */
+  margin: 1rem 0;
+}
+label {
+  color: var(--dark-color);
+  font-family: var(--font-global);
+  font-size: 1rem;
+  font-weight: 400;
+  text-transform: capitalize;
+}
+input {
+  /* display: block; */
+  font-family: var(--font-global);
+  font-size: 1rem;
+}
+
+/* FORM ROWS */
+#profile_row, #address_row {
+  width: 100%;
+  padding: 1rem;
+  color: var(--primary-color);
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+/* INPUT */
+.inputField {
+  font-family: var(--font-global);
+  font-size: 1rem;
+  background: var(--bright-color);
+  color: var(--primary-color);
+  border: 1px solid var(--bright-color);
+  border-radius: .5rem;
+  padding: .72rem 1rem;
+  transition: all .6s ease;
+  font-size: 1rem;
+  cursor: pointer;
+}
+.inputField::placeholder {
+  color: var(--grey-color);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.inputField:hover {
+  border: 1px solid var(--primary-color);
+}
+
+/* DROPDOWN MENU */
+.dropdownWrapper {
+  width: 100%;
+  border-radius: .5rem;
+  border: 1px solid var(--bright-color);
+  transition: all .2s ease-in-out;
+}
+.dropdownButton, .dateButton {
+  font-family: var(--font-global);
+  font-size: 1rem;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  background: var(--bright-color);
+  color: var(--grey-color);
+  border: 1px solid var(--bright-color);
+  border-radius: .5rem;
+  padding: .5rem 1rem;
+  transition: all .3s ease;
+  font-size: 1rem;
+  cursor: pointer;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: all .3s ease-in-out;
+}
+.dropdownWrapper:hover {
+  border: 1px solid var(--primary-color);
+}
+.selectList {
+  background: var(--bright-color);
+  color: var(--dark-color);
+  max-height: 300px;
+  overflow: auto;
+  border-bottom-left-radius: .5rem;
+  border-bottom-right-radius: .5rem;
+}
+.selectList > p {
+  font-family: var(--font-global);
+  font-weight: 400;
+  text-transform: capitalize;
+  font-size: 1rem;
+  padding: .5rem 1rem;
+}
+.selectList > p:hover {
+  background: var(--primary-color);
+  color: var(--bright-color);
+}
+
+/* DATEPICKER */
+.dateWrapper {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem 0;
+}
+.buttonCalendarWrapper {
+  border: 1px solid transparent;
+  border-radius: .5rem;
+  transition: all .3s ease-in-out;
+}
+.buttonCalendarWrapper:hover {
+  border: 1px solid var(--primary-color);
+  color: var(--primary-color);
+}
+.dateCalendar {
+  background-color: var(--bright-color);
+  width: 100%;
+  border-bottom-left-radius: .5rem;
+  border-bottom-right-radius: .5rem;
+}
+
+/* BACKBUTTON */
+.backBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: .5rem;
+  background-color: transparent;
+  cursor: pointer;
+  border-radius: 2rem;
+  border: 1px solid var(--primary-color);
+  color: var(--primary-color);
+  margin-top: 1rem;
+  
+  transition: all .3s ease-in-out;
+  width: fit-content;
+}
+.backBtn:hover {
+  background-color: var(--primary-color);
+  color: var(--bright-color);
+}
+.backBtn svg {
+  transition: all .3s ease-in-out;
+  fill: var(--primary-color);
+}
+.backBtn:hover svg {
+  fill: var(--bright-color);
+}
+#backArrowIcon {
+  width: 1.5rem;
+}
+
+/* SUBMITBUTTON */
+.submitBtn {
+  font-family: var(--font-global);
+  font-size: 1rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  padding: .5rem 3rem;
+  background-color: transparent;
+  cursor: pointer;
+  border-radius: .5rem;
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  transition: all .3s ease-in-out;
+  /* margin: 1rem 0; */
+  margin-left: auto;
+  margin-right: auto;
+  width: fit-content;
+}
+.submitBtn:hover {
+  background-color: var(--primary-color);
+  color: var(--primary-light-color);
+}
+
+/* MODAL */
+#modalBackground {
+  background-color: rgba(0,0,0,.3);
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top:0;
+  left:0;
+  display:flex;
+  justify-content: center;
+  align-items:center;
+}
+#modalWrapper {
+  position: relative;
+  display: flex;
+  width: 15rem;
+  height: 10rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: .5rem;
+  background-color: white;
+  padding: .5rem 1rem .75rem;
+  gap: 1rem;
+}
+#modalClosingWrapper {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-top: .5rem;
+  margin-right: .5rem;
+}
+#xMarkIcon {
+  cursor: pointer;
+  color: var(--primary-color);
+  transition: all .3s ease-in-out;
+}
+#xMarkIcon:hover {
+  transform: rotate(90deg);
+  background-color: var(--primary-color);
+  border-radius: 4rem;
+  color: white;
+}
+#modalText {
+  font-family:  inherit;
+  color: var(--primary-color);
+  font-size: 1rem;  
+  text-align:  center;
+}
+#modalBtn {
+  font-family: var(--font-global);
+  font-size: 1rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  padding: .5rem 3rem;
+  background-color: white;
+  cursor: pointer;
+  border-radius: .5rem;
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  transition: all .3s ease-in-out;
+}
+#modalBtn:hover {
+  background-color: var(--primary-color);
+  color: var(--primary-light-color);
+}
+
+/* DEFAULT BUTTON */
+.button {
+  display: block;
+  padding:.5rem 1rem ;
+  width: 10rem;
+  border-radius: .5rem;
+  border: 1px solid var(--dark-color);
+  background: var(--secondary-color);
+  color: var(--dark-color);
+  transition: all .3s ease;
+  text-align: center;
+  margin: 0 auto;
+}
+.button:hover {
+ cursor: pointer;
+ padding: .5rem 1.5rem;
+ background-color: var(--secondary-color);
+ color: var(--dark-color);
+ letter-spacing: 1px;
+}
+
+
+
+
+
+@media only screen and (max-width: 640px) {
+  body {
+    margin: 1rem;
+  }
+  #formEmployee {
+    padding: 0;
+    border: none;
+    box-shadow: 0 0 0 rgba(0,0,0,.2);
+  }
+  .rowWrapper {
+    flex-wrap: wrap;
+  }
+  .backBtn {
+    margin-left: 1rem;
+  }
+}

@@ -1,0 +1,8 @@
+create a react app:
+
+• datepicker √
+• modal √
+• date format √
+• dropdown menu ◊
+• data table ⁄
+• form validation ⁄
