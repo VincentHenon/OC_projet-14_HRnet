@@ -86,6 +86,247 @@ export const mockEmployees = [
       state: 'OR',
       zipCode: 87654,
       department: 'Marketing'
-    }
+    },
+    {
+      firstName: 'Emma',
+      lastName: 'Miller',
+      birthDate: '02/05/1987',
+      startDate: '09/18/2013',
+      street: '606 Pineapple St',
+      city: 'Tropicalville',
+      state: 'FL',
+      zipCode: 11223,
+      department: 'Human Ressources'
+    },
+    {
+      firstName: 'Daniel',
+      lastName: 'Taylor',
+      birthDate: '08/29/1980',
+      startDate: '04/11/2011',
+      street: '707 Mango St',
+      city: 'Exoticcity',
+      state: 'CA',
+      zipCode: 33445,
+      department: 'Human Ressources'
+    },
+    {
+      firstName: 'Olivia',
+      lastName: 'Baker',
+      birthDate: '05/10/1993',
+      startDate: '11/26/2018',
+      street: '808 Papaya St',
+      city: 'Islandtown',
+      state: 'HI',
+      zipCode: 55667,
+      department: 'Sales'
+    },
+    {
+      firstName: 'Mia',
+      lastName: 'Garcia',
+      birthDate: '10/03/1986',
+      startDate: '03/07/2012',
+      street: '909 Coconut St',
+      city: 'Beachville',
+      state: 'FL',
+      zipCode: 77889,
+      department: 'Legal'
+    }, {
+      firstName: 'Liam',
+      lastName: 'Evans',
+      birthDate: '09/02/1989',
+      startDate: '06/14/2015',
+      street: '1010 Seashell St',
+      city: 'Coastalville',
+      state: 'CA',
+      zipCode: 88999,
+      department: 'Marketing'
+    },
+    {
+      firstName: 'Ava',
+      lastName: 'Turner',
+      birthDate: '12/15/1984',
+      startDate: '02/28/2010',
+      street: '1111 Ocean St',
+      city: 'Beachtown',
+      state: 'FL',
+      zipCode: 22334,
+      department: 'Engineering'
+    },
+    {
+      firstName: 'Noah',
+      lastName: 'Hernandez',
+      birthDate: '04/20/1997',
+      startDate: '10/05/2019',
+      street: '1212 Shell St',
+      city: 'Shoreville',
+      state: 'CA',
+      zipCode: 44556,
+      department: 'Human Resources'
+    },
+    {
+      firstName: 'Isabella',
+      lastName: 'Taylor',
+      birthDate: '07/11/1981',
+      startDate: '01/22/2009',
+      street: '1313 Coral St',
+      city: 'Reeftown',
+      state: 'FL',
+      zipCode: 66778,
+      department: 'Legal'
+    },
+    {
+      firstName: 'Jackson',
+      lastName: 'Lee',
+      birthDate: '11/30/1998',
+      startDate: '07/02/2016',
+      street: '1414 Palm St',
+      city: 'Palmtown',
+      state: 'CA',
+      zipCode: 88900,
+      department: 'Engineering'
+    },
+    {
+      firstName: 'Sophia',
+      lastName: 'Morgan',
+      birthDate: '03/08/1991',
+      startDate: '08/15/2017',
+      street: '1515 Beach St',
+      city: 'Wavetown',
+      state: 'FL',
+      zipCode: 11223,
+      department: 'Sales'
+    },
+    {
+      firstName: 'James',
+      lastName: 'Nguyen',
+      birthDate: '06/25/1988',
+      startDate: '12/18/2014',
+      street: '1616 Wave St',
+      city: 'Surftown',
+      state: 'CA',
+      zipCode: 33445,
+      department: 'Marketing'
+    },
+    {
+      firstName: 'Ava',
+      lastName: 'Lopez',
+      birthDate: '10/14/1983',
+      startDate: '03/22/2011',
+      street: '1717 Sand St',
+      city: 'Sandtown',
+      state: 'FL',
+      zipCode: 55667,
+      department: 'Engineering'
+    },
+    {
+      firstName: 'Oliver',
+      lastName: 'Barnes',
+      birthDate: '05/29/1986',
+      startDate: '09/10/2012',
+      street: '1818 Dune St',
+      city: 'Duneville',
+      state: 'CA',
+      zipCode: 88999,
+      department: 'Legal'
+    },
+    {
+      firstName: 'Lucas',
+      lastName: 'Reyes',
+      birthDate: '01/08/1983',
+      startDate: '05/14/2010',
+      street: '1919 Lagoon St',
+      city: 'Waterside',
+      state: 'FL',
+      zipCode: 33445,
+      department: 'Sales'
+    },
+    {
+      firstName: 'Ella',
+      lastName: 'Murphy',
+      birthDate: '04/21/1995',
+      startDate: '10/26/2015',
+      street: '2020 Shore St',
+      city: 'Seaside',
+      state: 'CA',
+      zipCode: 55667,
+      department: 'Sales'
+    },
+    {
+      firstName: 'Henry',
+      lastName: 'Gonzalez',
+      birthDate: '09/12/1989',
+      startDate: '03/19/2011',
+      street: '2121 Cove St',
+      city: 'Harborville',
+      state: 'FL',
+      zipCode: 11223,
+      department: 'Engineering'
+    },
+    {
+      firstName: 'Scarlett',
+      lastName: 'Wright',
+      birthDate: '02/26/1986',
+      startDate: '07/08/2017',
+      street: '2222 Bay St',
+      city: 'Baytown',
+      state: 'CA',
+      zipCode: 88999,
+      department: 'Marketing'
+    },
+    {
+      firstName: 'Carter',
+      lastName: 'Perez',
+      birthDate: '06/07/1993',
+      startDate: '11/15/2012',
+      street: '2323 Bayou St',
+      city: 'Bayouville',
+      state: 'FL',
+      zipCode: 33445,
+      department: 'Human Resources'
+    },
+    {
+      firstName: 'Chloe',
+      lastName: 'Scott',
+      birthDate: '11/19/1984',
+      startDate: '06/02/2009',
+      street: '2424 Marsh St',
+      city: 'Marshville',
+      state: 'CA',
+      zipCode: 55667,
+      department: 'Legal'
+    },
+    {
+      firstName: 'Logan',
+      lastName: 'Rodriguez',
+      birthDate: '05/03/1980',
+      startDate: '12/09/2015',
+      street: '2525 Marsh St',
+      city: 'Lakeside',
+      state: 'FL',
+      zipCode: 33445,
+      department: 'Engineering'
+    },
+    {
+      firstName: 'Lily',
+      lastName: 'Lee',
+      birthDate: '10/18/1997',
+      startDate: '04/22/2018',
+      street: '2626 Lakeside St',
+      city: 'Lakeville',
+      state: 'CA',
+      zipCode: 11223,
+      department: 'Marketing'
+    },
+    {
+      firstName: 'Owen',
+      lastName: 'Wang',
+      birthDate: '03/14/1991',
+      startDate: '09/30/2014',
+      street: '2727 River St',
+      city: 'Rivertown',
+      state: 'FL',
+      zipCode: 88999,
+      department: 'Engineering'
+    },
   ]
   

@@ -2,7 +2,7 @@ import { useState } from "react"
 import ArrowDropUpIcon from '@mui/icons-material/ArrowDropUp'
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown'
 
-export default function DropdownMenu({ id, label, placeholder, items, handleValue }) {
+export default function DropdownMenu({ id, label, placeholder, items, handleValue, error }) {
     const [isOpen, setIsOpen] =  useState(false)
     const [selectedName, setSelectedName] = useState('')
 
@@ -20,7 +20,7 @@ export default function DropdownMenu({ id, label, placeholder, items, handleValu
   return (
     <div className='selectWrapper'>
         <label htmlFor={id}>{label}</label>
-        <div className='dropdownWrapper'>
+        <div className='dropdownWrapper' style={{ border: error? '1px solid red' : undefined }}>
             <button 
                 className='dropdownButton'
                 name={id}
@@ -32,8 +32,11 @@ export default function DropdownMenu({ id, label, placeholder, items, handleValu
                 onClick={handleButton}
                 required
             >
-            {selectedName? selectedName : placeholder}
-            {isOpen? <ArrowDropDownIcon /> : <ArrowDropUpIcon />}
+                {selectedName? selectedName : placeholder}
+                {isOpen? 
+                    <ArrowDropDownIcon /> 
+                : 
+                    <ArrowDropUpIcon />}
             </button>
             {isOpen && (
                 <div className='selectList'>
@@ -43,7 +46,10 @@ export default function DropdownMenu({ id, label, placeholder, items, handleValu
                 </div>
             )}
         </div>
+        {error? 
+            <p className='errorMessage'>{error}</p> 
+        : 
+            null}
     </div>
-
   )
 }

@@ -1,37 +1,23 @@
-import { NavLink } from "react-router-dom"
-import useStore from "../store/store"
-import Employee from "../components/Employee"
+import { Link } from 'react-router-dom'
+import ScreenWidth from '../components/ScreenWidth'
+import KeyboardBackspaceRoundedIcon from '@mui/icons-material/KeyboardBackspaceRounded'
+import Table from '../components/table/Table'
+import Logo from '../components/Logo'
 
 export default function ViewEmployees() {
-  // get the state 'employees'
-  let storedEmployees = useStore(state => state.employees)
-
   return (
-    <section id='ViewEmployees'>
-      <div id="employee-div" className="container">
-        <h1>Current Employees</h1>
-        <table>
-          <thead>
-            <tr>
-              <td>First Name</td>
-              <td>Last Name</td>
-              <td>Start Date</td>
-              <td>Department</td>
-              <td>Date of Birth</td>
-              <td>Street</td>
-              <td>City</td>
-              <td>State</td>
-              <td>Zip Code</td>
-            </tr>
-          </thead>
-          <tbody>
-            {storedEmployees.map((employee, index) => (
-              <Employee key={index} employee={employee} />
-            ))}
-          </tbody>
-        </table>
+    <>
+      <ScreenWidth/>
+      <div id='headerWrapper'>
+        <div style={{display: 'flex', gap: '1rem', alignItems: 'center'}}>
+          <Link to='/' className='backBtn'><KeyboardBackspaceRoundedIcon id='backArrowIcon'/></Link>
+          <h1 id='view_title'>Employees list</h1>
+        </div>
+        <Logo />
       </div>
-      <NavLink to='/' className='button'>Back</NavLink>
-    </section>
+      <section id='sectionPageView'>
+          <Table />
+      </section>
+    </>
   )
 }

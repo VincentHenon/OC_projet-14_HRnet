@@ -1,0 +1,42 @@
+#modal_bg {
+    background-color: rgba(0,0,0, .8);
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top:0;
+    left:0;
+    display:flex;
+    justify-content: center;
+    align-items:center;
+}
+#modal_box {
+    background-color: var(--bright-color);
+    position: relative;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 1rem;
+    gap: 1rem;
+    padding: 1.5rem 3rem;
+}
+#modal_xmark {
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-top: .5rem;
+    margin-right: .5rem;
+}
+#modal_content {
+    display: flex;
+    padding-top: 1rem;
+    align-items: center;
+    gap: 1rem;
+}
+#modal_btn {
+    padding: .5rem 2rem;
+    cursor: pointer;
+    border-radius: .5rem;
+}

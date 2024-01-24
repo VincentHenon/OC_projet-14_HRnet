@@ -5,7 +5,7 @@ import { DateCalendar } from '@mui/x-date-pickers/DateCalendar'
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown'
 import ArrowDropUpIcon from '@mui/icons-material/ArrowDropUp'
 
-export default function Datepicker({ id, label, placeholder, handleDate, smallScreen }) {
+export default function Datepicker({ id, label, placeholder, handleDate, smallScreen, error }) {
     const [isOpen, setIsOpen] = useState(false)
     const [selectedDate, setSelectedDate] = useState('')
 
@@ -26,39 +26,45 @@ export default function Datepicker({ id, label, placeholder, handleDate, smallSc
         <div className='dateWrapper'>
             <label htmlFor={id}>{label}</label>
             {smallScreen? 
-            <input 
-                className='inputField' 
-                name={id}
-                type='text' 
-                style={{
-                color: selectedDate ? 'var(--dark-color)' : undefined,
-                }} 
-                placeholder={selectedDate? selectedDate : 'MM/DD/YYYY'}
-                onChange={(e) => {
-                    setSelectedDate(e.target.value)
-                    handleDate(e.target.value)
-                }} 
-                required 
-            />
-            :
-            <div className='buttonCalendarWrapper'>
-                <button 
-                    className='dateButton'
+                <input 
+                    className='inputField' 
                     name={id}
-                    type='text'
+                    type='text' 
                     style={{
-                        color: selectedDate? 'var(--dark-color)' : undefined,
-                        borderBottomLeftRadius: isOpen? '0' : '.5rem',
-                        borderBottomRightRadius: isOpen? '0' : '.5rem',
+                        color: selectedDate ? 'var(--dark-color)' : undefined,
+                        border: error? '1px solid red' : undefined
                     }} 
-                    onClick={handleButton}
-                >
-                    {selectedDate? selectedDate : placeholder}
-                    {isOpen? <ArrowDropDownIcon /> : <ArrowDropUpIcon />}
-                </button>
-                {isOpen? <DateCalendar className='dateCalendar' onChange={handlePickDate} style={{width: '100%'}} /> : null}
-            </div>
+                    placeholder={selectedDate? selectedDate : 'MM/DD/YYYY'}
+                    onChange={(e) => {
+                        setSelectedDate(e.target.value)
+                        handleDate(e.target.value)
+                    }} 
+                    //required // set the datepicker to required or not
+                />
+            :
+                <div className='buttonCalendarWrapper' style={{border: error? '1px solid red' : undefined}}>
+                    <button 
+                        className='dateButton'
+                        name={id}
+                        type='text'
+                        style={{
+                            color: selectedDate? 'var(--dark-color)' : undefined,
+                            borderBottomLeftRadius: isOpen? '0' : '.5rem',
+                            borderBottomRightRadius: isOpen? '0' : '.5rem',
+                        }} 
+                        onClick={handleButton}
+                    >
+                        {selectedDate? selectedDate : placeholder}
+                        {isOpen? <ArrowDropDownIcon /> : <ArrowDropUpIcon />}
+                    </button>
+                    {isOpen? 
+                        <DateCalendar className='dateCalendar' onChange={handlePickDate} style={{width: '100%'}} /> 
+                    :
+                        null}
+                </div>
             }
+            {error && 
+                <p className='errorMessage'>{error}</p>}
         </div>
     )
 }

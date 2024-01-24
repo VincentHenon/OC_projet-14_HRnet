@@ -1,0 +1,11 @@
+<svg width="163" height="40" viewBox="0 0 163 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="20" height="40" fill="#5200FF"/>
+<rect x="24" width="20" height="40" fill="#5200FF"/>
+<rect x="48" width="20" height="40" fill="#5200FF"/>
+<rect x="72" width="20" height="20" rx="10" fill="#5200FF"/>
+<rect x="100" y="20" width="10" height="20" fill="#5200FF"/>
+<path d="M112 20V20C117.523 20 122 24.4772 122 30V40H112V20Z" fill="#5200FF"/>
+<path d="M124 30C124 24.4771 128.477 20 134 20C139.523 20 144 24.4771 144 30H134V40C128.477 40 124 35.5229 124 30Z" fill="#5200FF"/>
+<path d="M156 40V40C150.477 40 146 35.5228 146 30L146 20L156 20L156 40Z" fill="#5200FF"/>
+<path d="M163 30L158 30L158 25L163 25L163 30Z" fill="#5200FF"/>
+</svg>

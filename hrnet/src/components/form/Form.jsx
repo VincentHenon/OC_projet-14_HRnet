@@ -1,30 +1,47 @@
 import { useState, useEffect } from "react"
+import { useNavigate } from 'react-router-dom'
 import useStore from "../../store/store"
 import Modal from "../Modal"
 import Input from "./Input"
 import DropdownMenu from "./DropdownMenu"
 import Datepicker from './Datepicker'
+import { fieldValidation } from '../../utils/fieldValidation'
+import HomeIcon from '@mui/icons-material/Home'
+import PersonIcon from '@mui/icons-material/Person'
+import PersonAddIcon from '@mui/icons-material/PersonAdd'
+
 
 // content ⬇︎
 import { US_states } from "../../assets/content/stateList"
 import { departments } from "../../assets/content/departmentList"
  
 export default function Form() {
-    // select the action add from the state
+    // instate useNavigate
+    const navigate = useNavigate()
+
+    //STATES
+    // global state
     const addEmployee = useStore(state => state.addEmployee)
-    // get the current state
-    const stateEmployee = useStore(state => state.employees)
 
-    //local state for new employee
+    //local states
     const [employeeData, setEmployeeData] = useState({
-        firstName: '', lastName: '', birthDate: '', startDate: '',
+         lastName: '', birthDate: '', startDate: '',
         street: '', city: '', state: '', zipCode: '',
-        department: ''
+        department: '', firstName: ''
     })
-    // is small screen?
+    const [errors, setErrors] = useState({
+        firstName: '', lastName: '', birthDate: '', 
+        startDate: '', department: '', street: '', 
+        city: '', state: '', zipCode: ''
+    })
     const [smallScreen, setSmallScreen] = useState(false)
+    const [callModal, setCallModal] = useState(false)
+    const [isValidForm, setIsValidForm] = useState(false)
 
-    // Use useEffect to handle the resize event
+    //VARIABLES
+
+    // HANDLERS
+    // handle the resize event
     useEffect(() => {
         const handleResize = () => {
             const newScreenWidth = window.innerWidth
@@ -45,75 +62,186 @@ export default function Form() {
         }
     }, [])
 
-    // modal state
-    const [callModal, setCallModal] = useState(false)
-
     // close modal
     const handleClose = () => {
         setCallModal(false)
+        // clear the form only is the form was valid
+        if (isValidForm) {
+            clearForm()
+            setIsValidForm(false)
+        }
     }
 
-    //handle Submit and store the state
+    // navigate to All employees
+    const handleBtn2 = () => {
+        navigate('/employees/list')
+    }
+
+    //clear the state
+    const clearForm = () => {
+        setEmployeeData({
+            firstName: '',
+            lastName: '',
+            birthDate: '',
+            startDate: '',
+            street: '',
+            city: '',
+            state: '',
+            zipCode: '',
+            department: '',
+        })
+        setErrors({
+            firstName: '', lastName: '', birthDate: '', 
+            startDate: '', department: '', street: '', 
+            city: '', state: '', zipCode: '',
+        })
+    }
+
+    const handleField= (name, value) => {
+        setEmployeeData({ ...employeeData, [name]: value })
+        fieldValidation(name, value, setErrors)
+    }
+
+    //handle Submit
     const submitForm = (e) => {
         e.preventDefault()
-        /*validation method should be here*/
-        setCallModal(true)
-        const formData = new FormData(e.target)
-        const payload = Object.fromEntries(formData)
-        addEmployee(payload)
+        
+        // check if employee data is valid
+        Object.keys(employeeData).forEach((key) => {
+            const name = key
+            const value = employeeData[key]
+            fieldValidation(name, value, setErrors)
+            /*console.log('key : ', key, ' / value : ', value, ' / error : ', errors[key])*/
+        })
+
+        if (Object.values(errors).every((value) => value === null || value === '') &&
+            Object.values(employeeData).every((value) => value !== null && value !== '')) {
+
+            setIsValidForm(true)
+            setCallModal(true)
+            addEmployee(employeeData) // store the data in global state
+            clearForm()
+
+        } else  {
+            setCallModal(true)
+        }
     }
-    // log stuff here
-    useEffect(() => {
-        console.log(stateEmployee)
-        console.log('small screen :', smallScreen)
-    }, [stateEmployee, smallScreen])
 
     return (
         <>
-            <form id='formEmployee' onSubmit={submitForm}>
+            <form id='formEmployee'onSubmit={submitForm}>
                 <div className='rowWrapper'>
-                    <div id='profile_row'>Profile
-                        <Input  id='firstName'label='First Name' type='text' 
-                                placeholder='Type your first name'
-                                handleValue= {(value) => setEmployeeData({...employeeData, firstName: value})}/>
-
-                        <Input  id='lastName' label='Last Name' type='text' 
-                                placeholder='Type your last name'
-                                handleValue= {(value) => setEmployeeData({...employeeData, lastName: value})}/>
-
-                        <Datepicker id='birthDate' label='Birth Date' placeholder='Select a date' smallScreen={smallScreen}
-                                    handleDate={(value) => setEmployeeData({...employeeData, birthDate: value})}/>
-
-                        <Datepicker id='startDate' label='Start Date' placeholder='Select a date' smallScreen={smallScreen}
-                                    handleDate={(value) => setEmployeeData({...employeeData, startDate: value})}/>
-
-                        <DropdownMenu id='department' label='Department'items={departments}
-                                    placeholder='Select a department'
-                                    handleValue= {(value) => setEmployeeData({...employeeData, department: value})}/>  
-                    </div>
-                    <div id='address_row'>Address
-                        <Input id='street' label='Street' type='text'
-                            placeholder='Type your address'
-                            handleValue= {(value) => setEmployeeData({...employeeData, street: value})}
+                    <div id='profile_row'>
+                        <div style={{display: 'flex', alignItems: 'end', gap: '.5rem'}}>
+                            <PersonIcon />
+                            Profile
+                        </div>
+                        <Input  
+                            id='firstName'
+                            label='First Name' 
+                            type='text' 
+                            placeholder='Type your first name'
+                            handleValue= {(value) => handleField('firstName', value)}
+                            error= {errors.firstName}
                         />
 
-                        <Input id='city' label='City' type='text' 
+                        <Input  
+                            id='lastName' 
+                            label='Last Name' 
+                            type='text' 
+                            placeholder='Type your last name'
+                            handleValue= {(value) => handleField('lastName', value)}
+                            error={errors.lastName}
+                        />
+
+                        <Datepicker 
+                            id='birthDate' 
+                            label='Birth Date' 
+                            placeholder='Select a date' 
+                            smallScreen={smallScreen}
+                            handleDate= {(value) => handleField('birthDate', value)}
+                            error={errors.birthDate}
+                        />
+
+                        <Datepicker 
+                            id='startDate' 
+                            label='Start Date' 
+                            placeholder='Select a date' 
+                            smallScreen={smallScreen}
+                            handleDate= {(value) => handleField('startDate', value)}
+                            error={errors.startDate}
+                        />
+
+                        <DropdownMenu 
+                            id='department' 
+                            label='Department' 
+                            items={departments}
+                            placeholder='Select a department'
+                            handleValue= {(value) => handleField('department', value)}
+                            error={errors.department}
+                        />  
+                    </div>
+                    <div id='address_row'>
+                        <div style={{display: 'flex', alignItems: 'end', gap: '.5rem'}}>
+                            <HomeIcon />
+                            Address
+                        </div>
+                        <Input 
+                            id='street' 
+                            label='Street' 
+                            type='text'
+                            placeholder='Type your address'
+                            handleValue= {(value) => handleField('street', value)}
+                            error={errors.street}
+                        />
+
+                        <Input 
+                            id='city' 
+                            label='City' 
+                            type='text' 
                             placeholder='Type your city'
-                            handleValue= {(value) => setEmployeeData({...employeeData, city: value})}/>
+                            handleValue= {(value) => handleField('city', value)}
+                            error={errors.city}
+                        />
 
-                        <DropdownMenu id='state' label='State'
-                                    placeholder='Select a state'items={US_states}
-                                    handleValue= {(value) => setEmployeeData({...employeeData, state: value})}/>
+                        <DropdownMenu 
+                            id='state' 
+                            label='State'
+                            placeholder='Select a state'items={US_states}
+                            handleValue= {(value) => handleField('state', value)}
+                            error={errors.state}
+                        />
 
-                        <Input id='zipCode' label='Zip Code'type='number' 
+                        <Input 
+                            id='zipCode' 
+                            label='Zip Code'
+                            type='number' 
                             placeholder='Type your zip code'
-                            handleValue= {(value) => setEmployeeData({...employeeData, zipCode: value})}/>
+                            handleValue= {(value) => handleField('zipCode', value)}
+                            error={errors.zipCode}
+                        />
                     </div> 
                 </div>
-                <button className='submitBtn' type='submit' >Save profile</button>
+                <button className='submitBtn'><PersonAddIcon/> profile</button>
             </form>
             
-            {callModal ? <Modal handleClose={handleClose} text='A new profile has been added to the database!' /> : null}
+            {callModal ? 
+                <Modal 
+                    isValid={isValidForm} 
+                    handleClose={handleClose} 
+                    
+                    textMain={isValidForm? 'Profile added!' : 'Please fix the form.'}
+
+                    displayBtn1={true} 
+                    textBtn1='OK' 
+                    handleBtn1={handleClose}
+
+                    displayBtn2= {isValidForm? true : false} 
+                    textBtn2='View profiles' 
+                    handleBtn2={handleBtn2} 
+                /> 
+            : 
+                null}
         </>
     )
 }
