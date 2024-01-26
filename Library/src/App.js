@@ -11,8 +11,8 @@ const App = () => {
   const [displayBtn2, setDisplayBtn2] = useState(false)
   const [textMainValid, setTextMainValid] = useState("It's all good!")
   const [textMainError, setTextMainError] = useState("Something is wrong.")
-  const [textBtn1, setTextBtn1] = useState('Button 1')
-  const [textBtn2, setTextBtn2] = useState('Button 2')
+  const [textBtn1, setTextBtn1] = useState('Ok')
+  const [textBtn2, setTextBtn2] = useState('Cancel')
   const [isON, setIsON] = useState(false)
   
   // fallback main text
@@ -42,19 +42,19 @@ const App = () => {
 
   // button 1 action
   const handleBtn1 = () => {
-    console.log("btn1")
+    alert("button 1 clicked.")
     closeModal()
   }
 
   // button 2 action
   const handleBtn2 = () => {
-    console.log("btn2")
+    alert("button 2 clicked.")
     closeModal()
   }
 
   // close the modal
   const handleClose = () => {
-    console.log("close")
+    alert("modal closed.")
     closeModal()
   }
 
@@ -115,6 +115,23 @@ const App = () => {
           </code>
         </pre>
       </div>
+      
+      <div className='manualWrapper'>
+        <p>Here are all props needed: </p>
+        <div className='statesWrapper'>
+          <p>‣ <strong>isValid</strong>: <em>(boolean)</em> will display an error or valid message.</p>  
+          <p>‣ <strong>textMainValid</strong>: <em>(string)</em> main message when isValid is set to true.</p>  
+          <p>‣ <strong>textMainError</strong>: <em>(string)</em> main message when isValid is set to false.</p>  
+          <p>‣ <strong>textBtn1</strong>: <em>(string)</em> text for button 1.</p>  
+          <p>‣ <strong>textBtn2</strong>: <em>(string)</em> text for button 2.</p>  
+          <p>‣ <strong>displayBtn1</strong>: <em>(boolean)</em> will display or hide button 1.</p>  
+          <p>‣ <strong>displayBtn2</strong>: <em>(boolean)</em> will display or hide button 2.</p>  
+          <p>‣ <strong>handleClose</strong>: <em>(function)</em> to close the modal</p>  
+          <p>‣ <strong>handleBtn1</strong>: <em>(function)</em> custom on button 1 click</p>  
+          <p>‣ <strong>handleBtn2</strong>: <em>(function)</em> custom on button 2 click</p>  
+        </div>    
+      </div>
+
       <div className='manualWrapper' id='manageModalContent'> 
         <ClearIcon handleClear={handleClear}/>
         <p>Set <strong>'isValid'</strong>, <strong>'textMainValid'</strong> and <strong>'textMainError'</strong> props to display 2 different messages dynamically.</p>
