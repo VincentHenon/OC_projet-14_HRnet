@@ -7,4 +7,6 @@ module.exports = {
       },
     },
   };
+
+  /* change react script 'npm run start' with 'npm craco start' and 'npm run build' with 'npm craco build' */
   
