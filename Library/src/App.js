@@ -13,7 +13,6 @@ const App = () => {
   const [textMainError, setTextMainError] = useState("Something is wrong.")
   const [textBtn1, setTextBtn1] = useState('Ok')
   const [textBtn2, setTextBtn2] = useState('Cancel')
-  const [isON, setIsON] = useState(false)
   
   // fallback main text
   useEffect(() => {
@@ -58,6 +57,7 @@ const App = () => {
     closeModal()
   }
 
+  // clear the page's props
   const handleClear = (e) => {
     const parent = e.target.parentNode.parentNode
     console.log(parent.id)
@@ -81,20 +81,15 @@ const App = () => {
     }
   }
 
-  const handleSwitch = () => {
-    setIsON(!isON)
-    console.log('toggled!')
-  }
-
   return (
     <main>
       <h1>Simple Modal Library for React</h1>
       <div className='manualWrapper'>
-        <p>Import the modal library and include it in your JSX. Declare all props within the component.</p>
+        <p>Install the library with <strong>npm i @kluberrrr/simple-react-modal</strong>. Now you can import the modal library and include it in your JSX and declare all props within the component like below.</p>
         <pre>
           <code>
             {`
-            import Modal from "SimpleModal" 
+            import Modal from "@kluberrrr/simple-react-modal" 
               const YourComponent = () => {
                 return (
                   <Modal 
@@ -137,7 +132,6 @@ const App = () => {
         <p>Set <strong>'isValid'</strong>, <strong>'textMainValid'</strong> and <strong>'textMainError'</strong> props to display 2 different messages dynamically.</p>
         
         <div className='buttonsWrapper'>
-         {/*<button className= 'btnExample' onClick={ () => setIsValid(!isValid)}>Toggle message</button>*/}
           <ToggleSwitch switchLabel={'isValid'} handleSwitch={() => setIsValid(!isValid)} isON={isValid}/>
           <div className='inputWrapper'>
             <label htmlFor="textMainValid">valid message</label>
@@ -154,7 +148,6 @@ const App = () => {
         <ClearIcon handleClear={handleClear}/>
         <p>Specify <strong>'displayBtn1'</strong> and <strong>'displayBtn2'</strong> to choose which button to show, and set <strong>'textBtn1'</strong> and <strong>'textBtn2'</strong> accordingly. Additionally, use the <strong>'handleBtn1'</strong> and <strong>'handleBtn2'</strong> props for defining actions associated with the buttons.</p>
         <div className='buttonsWrapper'>
-          {/*<button className= 'btnExample'onClick={ () => setDisplayBtn1(!displayBtn1) }>Display button 1</button>*/}
           <ToggleSwitch switchLabel={'displayBtn1'} handleSwitch={() => setDisplayBtn1(!displayBtn1)} isON={displayBtn1}/>
           <div className='inputWrapper'>
             <label htmlFor='textBtn1'>button 1 text</label>
@@ -162,7 +155,6 @@ const App = () => {
           </div>
         </div>
         <div className='buttonsWrapper'>
-          {/* <button className= 'btnExample'onClick={ () => setDisplayBtn2(!displayBtn2) }>Display button 2</button> */}
           <ToggleSwitch switchLabel={'displayBtn2'} handleSwitch={() => setDisplayBtn2(!displayBtn2)} isON={displayBtn2}/>
           <div className='inputWrapper'>
             <label htmlFor='textBtn2'>button 2 text</label>

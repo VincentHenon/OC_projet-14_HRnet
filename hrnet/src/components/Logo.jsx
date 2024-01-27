@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react"
+import { useEffect } from "react"
 import useStore from "../store/store"
 import HR_green from '../assets/logo/HR_green.svg'
 import HR_blue from '../assets/logo/HR_blue.svg'

@@ -1,3 +1,4 @@
+import React from 'react'
 import './styles/modal.css'
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded'
 import ErrorIcon from '@mui/icons-material/Error'

@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react"
 import { useNavigate } from 'react-router-dom'
+import Modal from "@kluberrrr/simple-react-modal"
 import useStore from "../../store/store"
-import Modal from "../Modal"
+//import Modal from "../Modal"
 import Input from "./Input"
 import DropdownMenu from "./DropdownMenu"
 import Datepicker from './Datepicker'
@@ -230,7 +231,8 @@ export default function Form() {
                     isValid={isValidForm} 
                     handleClose={handleClose} 
                     
-                    textMain={isValidForm? 'Profile added!' : 'Please fix the form.'}
+                    textMainValid={'Profile added!'}
+                    textMainError={'Please fix the form.'}
 
                     displayBtn1={true} 
                     textBtn1='OK' 
