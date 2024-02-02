@@ -10,6 +10,7 @@ export default function Home() {
   // get state of the screen from the store
   const storedIsSmallScreen = useStore(state => state.userScreen) 
 
+      // eslint-disable-next-line no-unused-vars
   const [isSmallScreen, setIsSmallScreen] = useState(storedIsSmallScreen)
   
   //update screen state

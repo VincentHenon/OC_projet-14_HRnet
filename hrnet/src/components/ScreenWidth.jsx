@@ -3,14 +3,14 @@ import useStore from '../store/store'
 
 const ScreenWidth = () => {
   const setUserScreen = useStore((state) => state.setUserScreen)
-  const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth <= 640)
+  // eslint-disable-next-line no-unused-vars
+  const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth <= 640) 
 
   useEffect(() => {
     const handleResize = () => {
       const newWidth = window.innerWidth
       setIsSmallScreen(newWidth <= 640)
       setUserScreen(newWidth <= 640)
-      console.log('screen resized')
     }
 
     // Initial check on mount

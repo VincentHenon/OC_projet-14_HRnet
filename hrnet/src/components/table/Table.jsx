@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import React, { useEffect, useState } from "react"
 import useStore from "../../store/store"
 import DropdownTable from './DropdownTable'
 import FilterTags from "./FilterTags"

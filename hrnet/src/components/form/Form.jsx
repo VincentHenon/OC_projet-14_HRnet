@@ -2,7 +2,6 @@ import { useState, useEffect } from "react"
 import { useNavigate } from 'react-router-dom'
 import Modal from "@kluberrrr/simple-react-modal"
 import useStore from "../../store/store"
-//import Modal from "../Modal"
 import Input from "./Input"
 import DropdownMenu from "./DropdownMenu"
 import Datepicker from './Datepicker'

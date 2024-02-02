@@ -13,6 +13,7 @@ export default function SelectNrbItems({ handleItemsPerPage, totalItems }) {
 
     useEffect(()=> {
         handleItemsPerPage(itemsPerPage)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [itemsPerPage])
 
     const handleBtn = (value) => {
