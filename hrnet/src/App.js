@@ -10,16 +10,17 @@ import NewEmployee from './pages/NewEmployee'
 import Page404 from './pages/Page404'
 import LightModeRoundedIcon from '@mui/icons-material/LightModeRounded'
 import NightlightRoundRoundedIcon from '@mui/icons-material/NightlightRoundRounded'
+import useStore from './store/store'
+import { useStepperContext } from '@mui/material'
 
 function App() {
-  const storedTheme = localStorage.getItem('theme')
-  const [theme, setTheme] = useState(storedTheme)
+  const theme = useStore((state) => state.theme)
+  const setTheme = useStore((state) => state.setTheme)
 
   //handle theme button
   const toggleTheme = (e) => {
     e.preventDefault()
     const newTheme = theme === 'light'? 'dark' : 'light'
-    localStorage.setItem('theme', newTheme)
     setTheme(newTheme)
   }
 

@@ -24,11 +24,6 @@ export default function FilterTags({ content, handleSort, ascOrDesc }) {
     useEffect(() => {
         if (tagsRef.current) {
             tagsRef.current.addEventListener('scroll', handleScroll)
-        
-            // create an error message
-            /* return () => {
-                 tagsRef.current.removeEventListener('scroll', handleScroll)
-            }*/
         }
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [tagsRef])

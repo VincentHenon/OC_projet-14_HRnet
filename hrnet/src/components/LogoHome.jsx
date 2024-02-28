@@ -57,13 +57,13 @@ export default function Logo() {
 
     return (
         <>
-            <div id='logoWrapper' style={{display: 'flex', flexDirection: 'row', alignItems: 'baseline'}}>
-                <div id='imgWrapper' style= {{width: '138px', height: '60px', position: 'relative'}}>
-                    <img style={{ scale: '2 2'}} src={HR_green} alt="" />
-                    <img style={{ scale: '2 2'}} src={HR_blue} alt="" />
-                    <img style={{ scale: '2 2'}} src={HR_purple} alt="" />
+            <div id='logoWrapper'>
+                <div id='imgWrapper'>
+                    <img src={HR_green} alt="" />
+                    <img src={HR_blue} alt="" />
+                    <img src={HR_purple} alt="" />
                 </div>
-                <div id='net'style= {{color: 'var(--primary-color)', fontWeight: 'bold', fontSize: '2rem'}}>
+                <div id='net'>
                     NET
                 </div>
             </div>

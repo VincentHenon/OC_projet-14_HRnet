@@ -132,7 +132,7 @@ export default function Form() {
             <form id='formEmployee'onSubmit={submitForm}>
                 <div className='rowWrapper'>
                     <div id='profile_row'>
-                        <div style={{display: 'flex', alignItems: 'end', gap: '.5rem'}}>
+                        <div id='title-icon' >
                             <PersonIcon />
                             Profile
                         </div>
@@ -182,7 +182,7 @@ export default function Form() {
                         />  
                     </div>
                     <div id='address_row'>
-                        <div style={{display: 'flex', alignItems: 'end', gap: '.5rem'}}>
+                        <div id='title-icon'>
                             <HomeIcon />
                             Address
                         </div>

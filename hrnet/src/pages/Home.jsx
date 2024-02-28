@@ -27,9 +27,9 @@ export default function Home() {
   return (
     <>
       <ScreenWidth/>
-        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center',justifyContent: 'center', gap: '1rem', margin: '2rem'}}>
+        <div id='headerHome'>
           <LogoHome />
-          <div style={{display: 'block', fontWeight: 'bold', color: 'var(--primary-color)', fontSize: '1rem', textAlign: 'center', textTransform: 'capitalize', marginTop: '2rem'}}>
+          <div id='headerTitle'>
             Human Ressources Network
           </div>
         </div>

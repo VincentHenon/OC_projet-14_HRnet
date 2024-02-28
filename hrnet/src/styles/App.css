@@ -120,7 +120,6 @@ ________________________________________________________________________________
   justify-content: center;
   align-items: center;
 }
-
 /*
 _____________________________________________________________________________________________________
 */
@@ -142,6 +141,13 @@ ________________________________________________________________________________
 .backBtn {
   width: auto;
 }
+
+#newEmployeeTitle, #listEmployeesTitle {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
 #header_title {
   margin-bottom: 0;
 }
@@ -276,6 +282,14 @@ ________________________________________________________________________________
   font-weight: 500;
   text-transform: uppercase;
 }
+
+#title-icon {
+  display: flex;
+  align-items: end;
+  gap: .5rem;
+}
+
+
 
 /*
 _____________________________________________________________________________________________________
@@ -666,6 +680,13 @@ ________________________________________________________________________________
   justify-content: space-between;
   gap: .5rem;
 }
+
+#nbrItems {
+  display: flex;
+  justify-content: space-between;
+  gap: .4rem;
+}
+
 .paginationBtn {
   font-size: .75rem;
   color: var(--dark-color);
@@ -868,16 +889,18 @@ ________________________________________________________________________________
   flex-direction: row;
   align-items: baseline;
 }
+
 #imgWrapper {
   position: relative;
-  width: 69px;
-  height: 30px;
+  width: 138px;
+  height: 60px;
 }
 #imgWrapper > img {
   position: absolute;
   top: 0;
   left: 0;
   transform-origin: top left;
+  scale: 2 2;
 }
 #imgWrapper img:nth-child(5) {
   translate: 8px -8px;
@@ -893,6 +916,17 @@ ________________________________________________________________________________
 }
 #imgWrapper img:nth-child(1) {
   translate: 0 0;
+}
+
+#net {
+  color: var(--primary-color); 
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+#net2 {
+  color: var(--primary-color); 
+  font-weight: bold;
 }
 
 /*
@@ -1029,4 +1063,22 @@ ________________________________________________________________________________
     translate: 0 0;
     opacity: 1;
   }
+}
+
+#headerHome {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin: 2rem;
+}
+#headerTitle {
+display: block;
+font-weight: bold;
+color: var(--primary-color);
+font-size: 1rem;
+text-align: center;
+text-transform: capitalize;
+margin-top: 2rem;
 }

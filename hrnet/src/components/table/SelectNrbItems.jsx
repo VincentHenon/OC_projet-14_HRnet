@@ -23,7 +23,7 @@ export default function SelectNrbItems({ handleItemsPerPage, totalItems }) {
 
     return (
         <div id='selectItemsWrapper'>
-            <div style={{display: 'flex', justifyContent: 'space between', gap: '.4rem'}}>
+            <div id='nbrItems'>
                 <div className='paginationBtn' onClick={() => handleBtn(1)} style={itemsPerPage === 1? active : null}>01</div>
                 <div className='paginationBtn' onClick={() => handleBtn(5)} style={itemsPerPage === 5? active : null}>05</div>
                 <div className='paginationBtn' onClick={() => handleBtn(10)} style={itemsPerPage === 10? active : null}>10</div>

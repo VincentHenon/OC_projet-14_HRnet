@@ -18,7 +18,7 @@ export default function NewEmployee() {
     <>
       <ScreenWidth/>
       <div id='headerWrapper'>
-        <div style={{display: 'flex', gap: '1rem', alignItems: 'center'}}>  
+        <div id='newEmployeeTitle'>  
           <Link to='/' className='backBtn'>
               <KeyboardBackspaceRoundedIcon id='backArrowIcon'/>
           </Link>

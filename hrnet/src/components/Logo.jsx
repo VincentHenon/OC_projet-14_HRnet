@@ -51,13 +51,13 @@ export default function Logo() {
 
     return (
         !storedIsSmallScreen? 
-            <div id='logoWrapper'style={{display: 'flex', flexDirection: 'row', alignItems: 'baseline'}}>
+            <div id='logoWrapper'>
                 <div id='imgWrapper'>
                     <img className='logoImg' src={HR_green} alt="" />
                     <img className='logoImg' src={HR_blue} alt="" />
                     <img className='logoImg' src={HR_purple} alt="" />
                 </div>
-            <div style= {{color: 'var(--primary-color)', fontWeight: 'bold'}}>NET</div>
+            <div id='net2'>NET</div>
             </div>
         : 
             null

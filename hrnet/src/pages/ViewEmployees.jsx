@@ -9,7 +9,7 @@ export default function ViewEmployees() {
     <>
       <ScreenWidth/>
       <div id='headerWrapper'>
-        <div style={{display: 'flex', gap: '1rem', alignItems: 'center'}}>
+        <div id='listEmployeesTitle'>
           <Link to='/' className='backBtn'><KeyboardBackspaceRoundedIcon id='backArrowIcon'/></Link>
           <h1 id='view_title'>Employees list</h1>
         </div>
