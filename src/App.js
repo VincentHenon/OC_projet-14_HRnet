@@ -1,4 +1,4 @@
-import {useState, useEffect} from 'react'
+import { useEffect} from 'react'
 import { Routes, Route } from 'react-router-dom'
 import './styles/App.css'
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider'
@@ -11,7 +11,6 @@ import Page404 from './pages/Page404'
 import LightModeRoundedIcon from '@mui/icons-material/LightModeRounded'
 import NightlightRoundRoundedIcon from '@mui/icons-material/NightlightRoundRounded'
 import useStore from './store/store'
-import { useStepperContext } from '@mui/material'
 
 function App() {
   const theme = useStore((state) => state.theme)

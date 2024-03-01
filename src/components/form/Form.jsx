@@ -207,7 +207,8 @@ export default function Form() {
                         <DropdownMenu 
                             id='state' 
                             label='State'
-                            placeholder='Select a state'items={US_states}
+                            placeholder='Select a state'
+                            items={US_states}
                             handleValue= {(value) => handleField('state', value)}
                             error={errors.state}
                         />

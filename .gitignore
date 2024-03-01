@@ -1,2 +1,2 @@
-hrnet/node_modules
-Library/node_modules
+# dependencies
+/node_modules
